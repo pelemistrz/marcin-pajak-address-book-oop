@@ -11,11 +11,13 @@ class AddressBook{
     int idLoggedUser;
     int idLastContact;
     int idDeletedContact;
+    string fileWithUsers;
 
     vector<User> users;
 
     int getIdNewUser();
 
 public:
+    AddressBook();
     void userRegistration();
 };

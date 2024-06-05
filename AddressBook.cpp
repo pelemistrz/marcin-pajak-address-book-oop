@@ -1,5 +1,9 @@
 #include "AddressBook.h"
 
+AddressBook::AddressBook(){
+    fileWithUsers = "Users.txt";
+}
+
 void AddressBook::userRegistration(){
     string login, password;
     cout << endl;
@@ -35,7 +39,7 @@ void AddressBook::userRegistration(){
     cout << "Your account has been created." << endl;
 
     ofstream file;
-    file.open("Users.txt", ios::out | ios::app);
+    file.open(fileWithUsers, ios::out | ios::app);
     if (file.good())
     {
         file << userId << "|";
