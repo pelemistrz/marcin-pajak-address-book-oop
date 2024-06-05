@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <windows.h>
+#include <fstream>
 
 #include "User.h"
 
@@ -12,6 +14,8 @@ class AddressBook{
 
     vector<User> users;
 
+    int getIdNewUser();
+
 public:
-    void userRegistration(vector<User> &users);
+    void userRegistration();
 };
