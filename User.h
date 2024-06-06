@@ -1,3 +1,6 @@
+#ifndef USER_H
+#define USER_H
+
 #include <iostream>
 #include <string>
 
@@ -16,3 +19,5 @@ public:
     string getLogin();
     string getPassword();
 };
+
+#endif // USER_H
