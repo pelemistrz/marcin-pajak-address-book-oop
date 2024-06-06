@@ -1,23 +1,13 @@
 #include <iostream>
-#include <vector>
-#include <windows.h>
-#include <fstream>
 
-#include "User.h"
+#include "UserManager.h"
 
 using namespace std;
 
 class AddressBook{
-    int idLoggedUser;
-    int idLastContact;
-    int idDeletedContact;
-    string fileWithUsers;
-
-    vector<User> users;
-
-    int getIdNewUser();
+    UserManager userManager;
 
 public:
-    AddressBook();
     void userRegistration();
+
 };
