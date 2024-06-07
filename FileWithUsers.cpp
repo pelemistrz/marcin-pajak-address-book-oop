@@ -18,4 +18,33 @@ void FileWithUsers::addUserToTheFile(User user){
     }
 }
 
+string FileWithUsers::getFileWithUsers(){
+    return fileWithUsers;
+}
 
+vector<User> FileWithUsers::loadUsersFromFile(){
+    User user;
+    vector<User> users;
+    ifstream file;
+
+    file.open(fileWithUsers, ios::in);
+
+    string line;
+    if(file.good())
+    {
+        while(getline(file,line,'|'))
+        {
+            user.setId(atoi(line.c_str()));
+
+            getline(file,line,'|');
+            user.setLogin(line);
+
+            getline(file,line);
+            user.setPassword(line);
+
+            users.push_back(user);
+        }
+        file.close();
+    }
+    return users;
+}

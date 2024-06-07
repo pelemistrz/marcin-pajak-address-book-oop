@@ -40,12 +40,32 @@ void UserManager::userRegistration(){
 }
 
 int UserManager::getIdNewUser(){
-    if (users.empty() == true)
+        if (users.empty() == true)
         return 1;
     else
         return users.back().getId() + 1;
 }
 
 void UserManager::loadUsersFromFile(){
-    users = fileWithUsers.loadUsersFromFile();
+    ifstream file;
+    file.open(fileWithUsers, ios::in);
+    string line;
+
+    User user;
+
+    if(file.good())
+    {
+        while(getline(file,line,'|'))
+        {
+            user.id = atoi(line.c_str());
+
+            getline(file,line,'|');
+            user.login = line;
+
+            getline(file,line);
+            user.password = line;
+
+            users.push_back(user);
+        }
+    }
 }
