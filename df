@@ -1,0 +1,24 @@
+*   [33m64b6bdc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Merge branch 'featureLoggin'
+[31m|[m[32m\[m  
+[31m|[m * [33m8b92232[m[33m ([m[1;32mfeatureLoggin[m[33m)[m Add feature user log in and log out
+[31m|[m[31m/[m  
+*   [33m68de00c[m[33m ([m[1;31morigin/main[m[33m)[m Merge branch 'featureSetupFilenameAtBegining'
+[33m|[m[34m\[m  
+[33m|[m * [33m332a5b5[m Setup file name at the begining
+[33m|[m[33m/[m  
+* [33m51a7e67[m Refactor
+*   [33m313d284[m Merge branch 'featureLoadUserAtStart'
+[35m|[m[36m\[m  
+[35m|[m * [33m985a03c[m Added load user to vector on start program
+[35m|[m[35m/[m  
+*   [33md8c5b87[m Merge branch 'refactorUserRegister'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33mb1d17df[m Divide AddressBook to smaller classes
+[1;31m|[m[1;31m/[m  
+*   [33mf67cbf5[m Merge branch 'featureUserRegister'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33mb88ce8a[m Add registered User to file
+[1;33m|[m * [33mf09f74d[m Add registered user to vector
+[1;33m|[m * [33mdd4e107[m Create base class AddressBook and User
+[1;33m|[m[1;33m/[m  
+* [33m86a7323[m Create .gitignore

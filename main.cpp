@@ -53,13 +53,19 @@ int main(){
             cout<<"4. Show all contacts."<<endl;
             cout<<"5. Delete contact."<<endl;
             cout<<"6. Edit contact."<<endl;
-            cout<<"7. Log out."<<endl;
+            cout<<"7. Change password."<<endl;
+            cout<<"8. Log out."<<endl;
             cout<<"9. Exit."<<endl;
             cin>>choice;
 
-            if (choice == '7'){
+            if (choice == '7')
+            {
+                addressBook.userChangePassword();
+            }
+            else if (choice == '8'){
                 addressBook.userLogOut();
-            } else if (choice == '9')
+            }
+             else if (choice == '9')
             {
                 exit(0);
             }

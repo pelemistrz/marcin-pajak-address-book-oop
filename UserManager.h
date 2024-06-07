@@ -26,6 +26,7 @@ public:
     void userRegistration();
     void userLogIn();
     void userLogOut();
+    void userChangePassword();
     void loadUsersFromFile();
     int getIdLoggedUser();
 };
