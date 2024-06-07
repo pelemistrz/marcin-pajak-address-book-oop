@@ -1,11 +1,11 @@
 #include "FileWithUsers.h"
 
 FileWithUsers::FileWithUsers(){
-    fileWithUsers = "Users.txt";
+
 }
 
 void FileWithUsers::addUserToTheFile(User user){
-
+    string fileWithUsers = "Users.txt";
     file.open(fileWithUsers, ios::out | ios::app);
     if (file.good())
     {
@@ -18,13 +18,10 @@ void FileWithUsers::addUserToTheFile(User user){
     }
 }
 
-string FileWithUsers::getFileWithUsers(){
-    return fileWithUsers;
-}
-
 vector<User> FileWithUsers::loadUsersFromFile(){
     User user;
     vector<User> users;
+    string fileWithUsers = "Users.txt";
     ifstream file;
 
     file.open(fileWithUsers, ios::in);

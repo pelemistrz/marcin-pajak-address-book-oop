@@ -12,13 +12,11 @@
 using namespace std;
 
 class FileWithUsers{
-    string fileWithUsers;
     fstream file;
 
 public:
     FileWithUsers();
     void addUserToTheFile(User user);
     vector<User> loadUsersFromFile();
-    string getFileWithUsers();
 };
 #endif
