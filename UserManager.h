@@ -20,6 +20,7 @@ class UserManager{
     int getIdNewUser();
 
 public:
+    UserManager(string fileWithUsers) : fileWithUsers(fileWithUsers){};
     void userRegistration();
     void loadUsersFromFile();
 };

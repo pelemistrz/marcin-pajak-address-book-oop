@@ -11,7 +11,7 @@ using namespace std;
 
 int main(){
 
-    AddressBook addressBook;
+    AddressBook addressBook("Users.txt");
     addressBook.userRegistration();
 
     return 0;
