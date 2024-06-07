@@ -90,16 +90,10 @@ void UserManager::userChangePassword(){
     cout << "Please provide new password"<<endl;
     cin >> newPassword;
 
-    int usersSize = users.size();
-    for(int i = 0; i < usersSize; i++){
-        if( i == idLoggedUser){
-            users[i-1].setPassword(newPassword);
-            cout << "You password has been changed"<<endl;
-            break;
-        }
-    }
-    fileWithUsers.saveAllUsersToTheFile(users);
+    users[idLoggedUser-1].setPassword(newPassword);
+    cout << "You password has been changed"<<endl;
 
+    fileWithUsers.saveAllUsersToTheFile(users);
 
 }
 

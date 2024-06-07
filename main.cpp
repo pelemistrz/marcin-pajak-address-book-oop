@@ -11,7 +11,7 @@ using namespace std;
 
 int main(){
 
-    AddressBook addressBook("Users.txt");
+    AddressBook addressBook("Users.txt", "Contacts.txt");
 
     char choice;
     while(1)

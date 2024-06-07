@@ -1,14 +1,16 @@
 #include <iostream>
 
 #include "UserManager.h"
+#include "ContactManager.h"
 
 using namespace std;
 
 class AddressBook{
     UserManager userManager;
+    ContactManager contactManager;
 
 public:
-    AddressBook(string fileWithUsers) : userManager(fileWithUsers){
+    AddressBook(string fileWithUsers, string fileWithContacts) : userManager(fileWithUsers), contactManager(fileWithContacts){
         userManager.loadUsersFromFile();
     }
     void userRegistration();
