@@ -21,5 +21,6 @@ class UserManager{
 
 public:
     void userRegistration();
+    void loadUsersFromFile();
 };
 #endif

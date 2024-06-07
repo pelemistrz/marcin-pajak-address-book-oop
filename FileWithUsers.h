@@ -18,5 +18,7 @@ class FileWithUsers{
 public:
     FileWithUsers();
     void addUserToTheFile(User user);
+    vector<User> loadUsersFromFile();
+    string getFileWithUsers();
 };
 #endif
