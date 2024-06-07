@@ -12,5 +12,9 @@ public:
         userManager.loadUsersFromFile();
     }
     void userRegistration();
+    void userLogIn();
+    void userLogOut();
 
+
+    int getIdLoggedUser();
 };

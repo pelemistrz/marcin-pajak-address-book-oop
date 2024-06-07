@@ -1,7 +1,7 @@
 #include "FileWithUsers.h"
 
 void FileWithUsers::addUserToTheFile(User user){
-
+    fstream file;
     file.open(fileWithUsers, ios::out | ios::app);
     if (file.good())
     {
@@ -17,6 +17,7 @@ void FileWithUsers::addUserToTheFile(User user){
 vector<User> FileWithUsers::loadUsersFromFile(){
     User user;
     vector<User> users;
+    fstream file;
 
     file.open(fileWithUsers, ios::in);
 

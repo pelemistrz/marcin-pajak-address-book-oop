@@ -13,7 +13,6 @@ using namespace std;
 
 class FileWithUsers{
     const string fileWithUsers;
-    fstream file;
 
 public:
     FileWithUsers(string fileWithUsers) : fileWithUsers(fileWithUsers){};
