@@ -85,6 +85,24 @@ void UserManager::userLogOut(){
     idLoggedUser = 0;
 }
 
+void UserManager::userChangePassword(){
+    string newPassword = "";
+    cout << "Please provide new password"<<endl;
+    cin >> newPassword;
+
+    int usersSize = users.size();
+    for(int i = 0; i < usersSize; i++){
+        if( i == idLoggedUser){
+            users[i-1].setPassword(newPassword);
+            cout << "You password has been changed"<<endl;
+            break;
+        }
+    }
+    fileWithUsers.saveAllUsersToTheFile(users);
+
+
+}
+
 int UserManager::getIdLoggedUser(){
     return idLoggedUser;
 }

@@ -14,6 +14,7 @@ public:
     void userRegistration();
     void userLogIn();
     void userLogOut();
+    void userChangePassword();
 
 
     int getIdLoggedUser();

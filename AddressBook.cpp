@@ -12,6 +12,9 @@ void AddressBook::userLogOut(){
     userManager.userLogOut();
 }
 
+void AddressBook::userChangePassword(){
+    userManager.userChangePassword();
+}
 
 int AddressBook::getIdLoggedUser(){
     return userManager.getIdLoggedUser();

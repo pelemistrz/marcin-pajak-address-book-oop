@@ -40,3 +40,23 @@ vector<User> FileWithUsers::loadUsersFromFile(){
     }
     return users;
 }
+
+void FileWithUsers::saveAllUsersToTheFile(vector<User> &users){
+    fstream file;
+
+    file.open(fileWithUsers, ios::out | ios::trunc);
+    int usersSize = users.size();
+
+    if (file.good())
+    {
+        for(int i=0; i < usersSize; i++){
+            file << users[i].getId() << "|";
+            file << users[i].getLogin() << "|";
+            file << users[i].getPassword() << endl;
+        }
+
+        file.close();
+        cout << endl;
+    }
+
+}
