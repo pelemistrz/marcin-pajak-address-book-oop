@@ -49,3 +49,42 @@ int UserManager::getIdNewUser(){
 void UserManager::loadUsersFromFile(){
     users = fileWithUsers.loadUsersFromFile();
 }
+
+void UserManager::userLogIn(){
+
+    string login, password;
+    cout << "Please provide your login" << endl;
+    cin >> login;
+
+    int i = 0;
+    int sizeUser = users.size();
+    while (i < sizeUser)
+    {
+        if (users[i].getLogin() == login)
+        {
+            for (int attempt = 0; attempt < 3; attempt++)
+            {
+                cout << "Please enter your password. You have "  << 3 - attempt << " attempts:" << endl;
+                cin >> password;
+                if (users[i].getPassword() == password)
+                {
+                    cout << "You log in." << endl;
+                    idLoggedUser = users[i].getId();
+                    return;
+                }
+            }
+            cout << " You entered 3 times wrong passwod. Try again for 3 secunds." << endl;
+            Sleep(3000);
+        }
+        i++;
+    }
+    cout << "There is no user with this login." << endl;
+}
+
+void UserManager::userLogOut(){
+    idLoggedUser = 0;
+}
+
+int UserManager::getIdLoggedUser(){
+    return idLoggedUser;
+}
