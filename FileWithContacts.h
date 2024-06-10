@@ -15,6 +15,7 @@ class FileWithContacts{
 
 public:
     FileWithContacts(string fileWithContacts) : fileWithContacts(fileWithContacts){};
+    vector<Contact> loadContactsFromFile(int idLoggedUser);
 
 };
 #endif

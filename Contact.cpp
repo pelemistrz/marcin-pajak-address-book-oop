@@ -18,10 +18,17 @@ void Contact::setAddress(string newAddress){
 void Contact::setPhone(string newPhone){
     phone = newPhone;
 }
+ void Contact::setIdUserWhoCreatedContact(int newIdUserWhoCreatedContact){
+    idUserWhoCreatedContact = newIdUserWhoCreatedContact;
+ }
 
 int Contact::getId(){
     return id;
 }
+ int Contact::getIdUserWhoCreatedContact(){
+    return idUserWhoCreatedContact;
+ }
+
 string Contact::getName(){
     return name;
 }

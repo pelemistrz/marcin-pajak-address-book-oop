@@ -15,9 +15,16 @@ void AddressBook::userLogOut(){
 void AddressBook::userChangePassword(){
     userManager.userChangePassword();
 }
-
 int AddressBook::getIdLoggedUser(){
     return userManager.getIdLoggedUser();
+}
+
+void AddressBook::loadContactsFromFile(int idLoggedUser){
+    contactManager.loadContactsFromFile(idLoggedUser);
+}
+
+void AddressBook::showAllContacts(){
+    contactManager.showAllContacts();
 }
 
 
