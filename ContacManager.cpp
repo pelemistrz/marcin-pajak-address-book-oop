@@ -33,3 +33,44 @@ void ContactManager::showContact(int whichContact)
     cout << "Adres: " << contacts[whichContact].getAddress() << endl;
     cout << "\n";
 }
+
+void ContactManager::newContact(int idLoggedUser){
+    int newContactId =  fileWithContacts.getIdLastContact() + 1;
+
+
+    string name, surname, email, address, phone;
+
+    cout << "Please provide name " << endl;
+    cin >> name;
+    cout << "Please provide surname: " << endl;
+    cin >> surname;
+    cout << "Please provide email: " << endl;
+    cin >> email;
+    cout << "Please provide address: " << endl;
+    cin.sync();
+    getline(cin, address);
+    cout << "Please provide phone number: " << endl;
+    cin.sync();
+    getline(cin, phone);
+
+    Contact newContact;
+
+    newContact.setId(newContactId);
+    newContact.setIdUserWhoCreatedContact(idLoggedUser);
+    newContact.setName(name);
+    newContact.setSurname(surname);
+    newContact.setEmail(email);
+    newContact.setAddress(address);
+    newContact.setPhone(phone);
+
+    contacts.push_back(newContact);
+
+    fileWithContacts.addContactToTheFile(newContact);
+
+        cout<<"Contact has been added"<<endl;
+        system("pause");
+        system("cls");
+
+}
+
+

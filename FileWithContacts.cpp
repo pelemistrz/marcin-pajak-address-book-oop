@@ -1,9 +1,10 @@
 #include "FileWithContacts.h"
+#include "Helper.h"
 
 using namespace std;
 
-vector<Contact> FileWithContacts::loadContactsFromFile(int idLoggedUser)
-{
+vector<Contact> FileWithContacts::loadContactsFromFile(int idLoggedUser){
+
     fstream file;
     file.open(fileWithContacts,ios::in);
     string line;
@@ -44,4 +45,51 @@ vector<Contact> FileWithContacts::loadContactsFromFile(int idLoggedUser)
         }
     }
     return contacts;
+}
+
+int FileWithContacts::getIdLastContact(){
+
+    int idLastContact = 0;
+    string number = "";
+    string lastLine;
+    string line;
+    fstream file;
+    file.open(fileWithContacts, ios::in);
+    if (file.good() == true)
+    {
+        while (getline(file, line)){
+            lastLine = line;
+        }
+         file.close();
+    }
+    else {
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+    }
+
+    number = Helper::getNumberFromString(lastLine,0);
+
+    if (lastLine != "")
+    {
+
+        idLastContact = atoi(number.c_str());
+    }
+    return idLastContact;
+}
+
+void FileWithContacts::addContactToTheFile(Contact contact){
+    fstream file;
+    file.open(fileWithContacts,ios::out | ios::app);
+        if (file.good())
+        {
+            file<<contact.getId()<<"|";
+            file<<contact.getIdUserWhoCreatedContact()<<"|";
+            file<<contact.getName()<<"|";
+            file<<contact.getSurname()<<"|";
+            file<<contact.getPhone()<<"|";
+            file<<contact.getEmail()<<"|";
+            file<<contact.getAddress()<<endl;
+
+            file.close();
+            cout<<endl;
+        }
 }

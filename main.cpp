@@ -25,7 +25,7 @@ int main(){
             cout << "2. Log in" << endl;
             cout << "9. Exit" << endl;
             cout<<"-------------------------------"<<endl;
-            cout<<"Twoj wybor"<<endl;
+            cout<<"Your choice: ";
             cin >> choice;
             if (choice == '1')
             {
@@ -59,7 +59,10 @@ int main(){
             cout<<"9. Exit."<<endl;
             cin>>choice;
 
-            if (choice == '4')
+              if (choice == '1')
+            {
+                addressBook.newContact(idLoggedUser);
+            } else if (choice == '4')
             {
                 addressBook.showAllContacts();
             }

@@ -1,7 +1,7 @@
 #include <iostream>
-
-#include "UserManager.h"
 #include "ContactManager.h"
+#include "UserManager.h"
+
 
 using namespace std;
 
@@ -18,8 +18,10 @@ public:
     void userLogIn();
     void userLogOut();
     void userChangePassword();
+    int getIdLoggedUser();
+
     void loadContactsFromFile(int idLoggedUser);
     void showAllContacts();
+    void newContact(int idLoggedUser);
 
-    int getIdLoggedUser();
 };

@@ -27,6 +27,12 @@ void AddressBook::showAllContacts(){
     contactManager.showAllContacts();
 }
 
+void AddressBook::newContact(int idLoggedUser){
+    contactManager.newContact(idLoggedUser);
+}
+
+
+
 
 
 
