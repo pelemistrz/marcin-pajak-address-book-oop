@@ -17,9 +17,12 @@ class ContactManager{
     FileWithContacts fileWithContacts;
 
     int getIdNewUser();
+    void showContact(int whichContact);
 
 public:
      ContactManager(string fileWithContacts) : fileWithContacts(fileWithContacts){}
+     void loadContactsFromFile(int idLoggedUser);
+     void showAllContacts();
 
 
 };

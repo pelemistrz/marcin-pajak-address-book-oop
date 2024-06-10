@@ -43,7 +43,8 @@ int main(){
 
         if(addressBook.getIdLoggedUser() !=0)
         {
-
+            int idLoggedUser = addressBook.getIdLoggedUser();
+            addressBook.loadContactsFromFile(idLoggedUser);
 
             cout<<endl;
             cout<<"Welcome in Address Book. Please choose one option: " <<endl<<endl;
@@ -58,7 +59,11 @@ int main(){
             cout<<"9. Exit."<<endl;
             cin>>choice;
 
-            if (choice == '7')
+            if (choice == '4')
+            {
+                addressBook.showAllContacts();
+            }
+            else if (choice == '7')
             {
                 addressBook.userChangePassword();
             }

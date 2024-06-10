@@ -8,6 +8,7 @@ using namespace std;
 
 class Contact{
     int id;
+    int idUserWhoCreatedContact;
     string name;
     string surname;
     string email;
@@ -17,6 +18,7 @@ class Contact{
 
 public:
     void setId(int newId);
+    void setIdUserWhoCreatedContact(int newIdUserWhoCreatedContact);
     void setName(string newName);
     void setSurname(string newSurname);
     void setEmail(string newEmail);
@@ -24,6 +26,7 @@ public:
     void setPhone(string newPhoe);
 
     int getId();
+    int getIdUserWhoCreatedContact();
     string getName();
     string getSurname();
     string getEmail();
