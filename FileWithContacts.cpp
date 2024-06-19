@@ -6,7 +6,7 @@ using namespace std;
 vector<Contact> FileWithContacts::loadContactsFromFile(int idLoggedUser){
 
     fstream file;
-    file.open(NAME_OF_FILE_WITH_CONTACTS,ios::in);
+    file.open(getNameOfFile(),ios::in);
     string line;
     Contact contact;
     vector<Contact> contacts;
@@ -58,7 +58,7 @@ int FileWithContacts::getIdLastContact(){
 
 void FileWithContacts::addContactToTheFile(Contact contact){
     fstream file;
-    file.open(NAME_OF_FILE_WITH_CONTACTS,ios::out | ios::app);
+    file.open(getNameOfFile(),ios::out | ios::app);
         if (file.good())
         {
             file<<contact.getId()<<"|";
@@ -79,7 +79,7 @@ void FileWithContacts::addContactToTheFile(Contact contact){
             fstream fileTemporary;
             int idUserWhoCreatedContact;
 
-            fileOryginal.open(NAME_OF_FILE_WITH_CONTACTS, ios::in | ios::out);
+            fileOryginal.open(getNameOfFile(), ios::in | ios::out);
             fileTemporary.open("ContactTemporary.txt", ios::out);
             fileTemporary.clear();
 
@@ -124,8 +124,8 @@ void FileWithContacts::addContactToTheFile(Contact contact){
             fileOryginal.close();
             fileTemporary.close();
 
-            remove(NAME_OF_FILE_WITH_CONTACTS.c_str());
-            rename("ContactTemporary.txt",NAME_OF_FILE_WITH_CONTACTS.c_str());
+            remove(getNameOfFile().c_str());
+            rename("ContactTemporary.txt",getNameOfFile().c_str());
    }
 
 void FileWithContacts::editContactInFile(int idContactToEdit, Contact contactAfterEdit){
@@ -134,7 +134,7 @@ void FileWithContacts::editContactInFile(int idContactToEdit, Contact contactAft
     Contact contact;
     string line;
 
-    fileOryginal.open(NAME_OF_FILE_WITH_CONTACTS, ios::in | ios::out);
+    fileOryginal.open(getNameOfFile(), ios::in | ios::out);
     fileTemporary.open("ContactsTemporary.txt", ios::out);
     fileTemporary.clear();
 
@@ -185,8 +185,8 @@ void FileWithContacts::editContactInFile(int idContactToEdit, Contact contactAft
     fileOryginal.close();
     fileTemporary.close();
 
-    remove(NAME_OF_FILE_WITH_CONTACTS.c_str());
-    rename("ContactsTemporary.txt",NAME_OF_FILE_WITH_CONTACTS.c_str());
+    remove(getNameOfFile().c_str());
+    rename("ContactsTemporary.txt",getNameOfFile().c_str());
 }
 
 //   void FileWithContacts::saveContactToFile(Contact contact, fstream file){

@@ -8,14 +8,15 @@
 
 #include "User.h"
 #include "Helper.h"
+#include "FileText.h"
 
 using namespace std;
 
-class FileWithUsers{
-    const string NAME_OF_FILE_WITH_USERS;
+class FileWithUsers : public FileText{
+
 
 public:
-    FileWithUsers(string nameOfFileWithUsers) : NAME_OF_FILE_WITH_USERS(nameOfFileWithUsers){};
+    FileWithUsers(string nameOfFileWithUsers) : FileText(nameOfFileWithUsers){};
     void addUserToTheFile(User user);
     void saveAllUsersToTheFile(vector<User> &users);
     vector<User> loadUsersFromFile();

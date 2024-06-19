@@ -11,16 +11,16 @@
 
 #include "Contact.h"
 #include "Helper.h"
+#include "FileText.h"
 
 using namespace std;
 
-class FileWithContacts{
-    const string NAME_OF_FILE_WITH_CONTACTS;
+class FileWithContacts : public FileText{
     int idLastContact;
 //    void saveContactToFile(Contact contact, fstream file);
 
 public:
-    FileWithContacts(string nameOfFileWithContacts) : NAME_OF_FILE_WITH_CONTACTS(nameOfFileWithContacts){
+    FileWithContacts(string nameOfFileWithContacts) : FileText(nameOfFileWithContacts){
         idLastContact = 0;
     };
 
