@@ -54,14 +54,32 @@ int main(){
             cout<<"7. Change password."<<endl;
             cout<<"8. Log out."<<endl;
             cout<<"9. Exit."<<endl;
+
             cin>>choice;
 
-              if (choice == '1')
-            {
+              if (choice == '1'){
                 addressBook.newContact();
-            } else if (choice == '4')
+
+            } else if( choice == '2')
             {
+                addressBook.searchByName();
+
+            } else if(choice == '3')
+            {
+                addressBook.searchBySurname();
+
+            }   else if (choice == '4')
+            {
+                cout<<endl<<endl<<choice<<endl;
                 addressBook.showAllContacts();
+
+            } else if(choice == '5')
+            {
+                addressBook.deleteContact();
+
+            } else if(choice == '6'){
+
+                addressBook.editContact();
             }
             else if (choice == '7')
             {

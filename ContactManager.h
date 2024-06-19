@@ -8,7 +8,7 @@
 #include <fstream>
 #include "FileWithContacts.h"
 #include "Contact.h"
-
+#include "Helper.h"
 
 using namespace std;
 
@@ -27,7 +27,12 @@ public:
 
      void loadContactsFromFile(int idLoggedUser);
      void showAllContacts();
+
      void newContact();
+     void searchByName();
+     void searchBySurname();
+     void deleteContact();
+     void editContact();
 
 
 };

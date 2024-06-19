@@ -9,6 +9,7 @@ using namespace std;
 class Helper{
 public:
     static string getNumberFromString(string text, int position);
+//    static void showContact(Contact contact);
 };
 
 #endif

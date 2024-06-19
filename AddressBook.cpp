@@ -33,6 +33,19 @@ void AddressBook::newContact(){
     contactManager->newContact();
 }
 
+void AddressBook::searchByName(){
+    contactManager->searchByName();
+}
+void AddressBook::searchBySurname(){
+        contactManager->searchBySurname();
+}
+void AddressBook::deleteContact(){
+    contactManager->deleteContact();
+}
+void AddressBook::editContact(){
+    contactManager->editContact();
+}
+
 
 
 
