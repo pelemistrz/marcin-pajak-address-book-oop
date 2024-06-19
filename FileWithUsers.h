@@ -12,10 +12,10 @@
 using namespace std;
 
 class FileWithUsers{
-    const string fileWithUsers;
+    const string NAME_OF_FILE_WITH_USERS;
 
 public:
-    FileWithUsers(string fileWithUsers) : fileWithUsers(fileWithUsers){};
+    FileWithUsers(string nameOfFileWithUsers) : NAME_OF_FILE_WITH_USERS(nameOfFileWithUsers){};
     void addUserToTheFile(User user);
     void saveAllUsersToTheFile(vector<User> &users);
     vector<User> loadUsersFromFile();

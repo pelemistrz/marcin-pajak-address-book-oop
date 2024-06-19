@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <string>
 #include <windows.h>
 #include <vector>
@@ -43,8 +42,6 @@ int main(){
 
         if(addressBook.getIdLoggedUser() !=0)
         {
-            int idLoggedUser = addressBook.getIdLoggedUser();
-            addressBook.loadContactsFromFile(idLoggedUser);
 
             cout<<endl;
             cout<<"Welcome in Address Book. Please choose one option: " <<endl<<endl;
@@ -61,7 +58,7 @@ int main(){
 
               if (choice == '1')
             {
-                addressBook.newContact(idLoggedUser);
+                addressBook.newContact();
             } else if (choice == '4')
             {
                 addressBook.showAllContacts();

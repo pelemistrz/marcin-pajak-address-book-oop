@@ -40,3 +40,6 @@ obj/*
 *.cbp
 *uxf
 Users.txt
+*.pdf
+include/
+src/

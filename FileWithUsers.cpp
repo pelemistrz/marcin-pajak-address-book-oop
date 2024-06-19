@@ -2,7 +2,7 @@
 
 void FileWithUsers::addUserToTheFile(User user){
     fstream file;
-    file.open(fileWithUsers, ios::out | ios::app);
+    file.open(NAME_OF_FILE_WITH_USERS, ios::out | ios::app);
     if (file.good())
     {
         file << user.getId() << "|";
@@ -19,7 +19,7 @@ vector<User> FileWithUsers::loadUsersFromFile(){
     vector<User> users;
     fstream file;
 
-    file.open(fileWithUsers, ios::in);
+    file.open(NAME_OF_FILE_WITH_USERS, ios::in);
 
     string line;
     if(file.good())
@@ -44,7 +44,7 @@ vector<User> FileWithUsers::loadUsersFromFile(){
 void FileWithUsers::saveAllUsersToTheFile(vector<User> &users){
     fstream file;
 
-    file.open(fileWithUsers, ios::out | ios::trunc);
+    file.open(NAME_OF_FILE_WITH_USERS, ios::out | ios::trunc);
     int usersSize = users.size();
 
     if (file.good())

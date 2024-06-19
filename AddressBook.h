@@ -7,11 +7,17 @@ using namespace std;
 
 class AddressBook{
     UserManager userManager;
-    ContactManager contactManager;
+    ContactManager *contactManager;
+    const string NAME_OF_FILE_WITH_CONTACTS;
 
 public:
-    AddressBook(string fileWithUsers, string fileWithContacts) : userManager(fileWithUsers), contactManager(fileWithContacts){
-        userManager.loadUsersFromFile();
+    AddressBook(string nameOfFileWithUsers, string nameOfFileWithContacts) : userManager(nameOfFileWithUsers), NAME_OF_FILE_WITH_CONTACTS(nameOfFileWithContacts){
+        contactManager = NULL;
+    }
+
+    ~AddressBook(){
+        delete contactManager;
+        contactManager = NULL;
     }
 
     void userRegistration();
@@ -22,6 +28,6 @@ public:
 
     void loadContactsFromFile(int idLoggedUser);
     void showAllContacts();
-    void newContact(int idLoggedUser);
+    void newContact();
 
 };

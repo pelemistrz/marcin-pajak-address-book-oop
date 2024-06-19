@@ -46,9 +46,6 @@ int UserManager::getIdNewUser(){
         return users.back().getId() + 1;
 }
 
-void UserManager::loadUsersFromFile(){
-    users = fileWithUsers.loadUsersFromFile();
-}
 
 void UserManager::userLogIn(){
 
@@ -99,4 +96,12 @@ void UserManager::userChangePassword(){
 
 int UserManager::getIdLoggedUser(){
     return idLoggedUser;
+}
+
+bool UserManager::isLogIn(){
+    bool isLogIn = false;
+    if(idLoggedUser !=0 ){
+        isLogIn = true;
+    }
+    return isLogIn;
 }

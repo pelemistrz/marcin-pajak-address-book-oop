@@ -15,10 +15,13 @@
 using namespace std;
 
 class FileWithContacts{
-    const string fileWithContacts;
+    const string NAME_OF_FILE_WITH_CONTACTS;
+    int idLastContact;
 
 public:
-    FileWithContacts(string fileWithContacts) : fileWithContacts(fileWithContacts){};
+    FileWithContacts(string nameOfFileWithContacts) : NAME_OF_FILE_WITH_CONTACTS(nameOfFileWithContacts){
+        idLastContact = 0;
+    };
     vector<Contact> loadContactsFromFile(int idLoggedUser);
     int getIdLastContact();
     void addContactToTheFile(Contact contact);

@@ -34,7 +34,7 @@ void ContactManager::showContact(int whichContact)
     cout << "\n";
 }
 
-void ContactManager::newContact(int idLoggedUser){
+void ContactManager::newContact(){
     int newContactId =  fileWithContacts.getIdLastContact() + 1;
 
 
@@ -56,7 +56,7 @@ void ContactManager::newContact(int idLoggedUser){
     Contact newContact;
 
     newContact.setId(newContactId);
-    newContact.setIdUserWhoCreatedContact(idLoggedUser);
+    newContact.setIdUserWhoCreatedContact(ID_LOGGED_USER);
     newContact.setName(name);
     newContact.setSurname(surname);
     newContact.setEmail(email);

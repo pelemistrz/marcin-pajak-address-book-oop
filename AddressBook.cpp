@@ -6,10 +6,16 @@ void AddressBook::userRegistration(){
 
 void AddressBook::userLogIn(){
       userManager.userLogIn();
+      if(userManager.isLogIn()){
+        contactManager = new ContactManager(NAME_OF_FILE_WITH_CONTACTS, userManager.getIdLoggedUser());
+      }
+//
 }
 
 void AddressBook::userLogOut(){
     userManager.userLogOut();
+    delete contactManager;
+    contactManager = NULL;
 }
 
 void AddressBook::userChangePassword(){
@@ -19,16 +25,12 @@ int AddressBook::getIdLoggedUser(){
     return userManager.getIdLoggedUser();
 }
 
-void AddressBook::loadContactsFromFile(int idLoggedUser){
-    contactManager.loadContactsFromFile(idLoggedUser);
-}
-
 void AddressBook::showAllContacts(){
-    contactManager.showAllContacts();
+    contactManager->showAllContacts();
 }
 
-void AddressBook::newContact(int idLoggedUser){
-    contactManager.newContact(idLoggedUser);
+void AddressBook::newContact(){
+    contactManager->newContact();
 }
 
 

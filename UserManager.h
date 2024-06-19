@@ -22,12 +22,14 @@ class UserManager{
 public:
     UserManager(string fileWithUsers) : fileWithUsers(fileWithUsers){
         idLoggedUser = 0;
+        users = this->fileWithUsers.loadUsersFromFile();
     };
     void userRegistration();
     void userLogIn();
     void userLogOut();
     void userChangePassword();
-    void loadUsersFromFile();
+    bool isLogIn();
+
     int getIdLoggedUser();
 };
 #endif
