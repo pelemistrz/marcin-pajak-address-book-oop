@@ -8,7 +8,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
 
     AddressBook addressBook("Users.txt", "Contacts.txt");
 
@@ -26,17 +27,19 @@ int main(){
             cout<<"-------------------------------"<<endl;
             cout<<"Your choice: ";
             cin >> choice;
-            if (choice == '1')
-            {
+
+            switch(choice) {
+            case '1':
                 addressBook.userRegistration();
-            }
-            if (choice == '2')
-            {
+                break;
+            case '2':
                 addressBook.userLogIn();
-            }
-            if (choice == '9')
-            {
+                break;
+            case '9':
                 exit(0);
+                break;
+            default:
+                break;
             }
         }
 
@@ -57,40 +60,37 @@ int main(){
 
             cin>>choice;
 
-              if (choice == '1'){
-                addressBook.newContact();
-
-            } else if( choice == '2')
-            {
-                addressBook.searchByName();
-
-            } else if(choice == '3')
-            {
-                addressBook.searchBySurname();
-
-            }   else if (choice == '4')
-            {
+            switch(choice){
+            case '1':
+              addressBook.newContact();
+            break;
+            case '2':
+               addressBook.searchByName();
+               break;
+            case '3':
+               addressBook.searchBySurname();
+                break;
+            case '4':
                 cout<<endl<<endl<<choice<<endl;
                 addressBook.showAllContacts();
-
-            } else if(choice == '5')
-            {
+                break;
+            case '5':
                 addressBook.deleteContact();
-
-            } else if(choice == '6'){
-
-                addressBook.editContact();
-            }
-            else if (choice == '7')
-            {
+                break;
+            case '6':
+               addressBook.editContact();
+                break;
+            case '7':
                 addressBook.userChangePassword();
-            }
-            else if (choice == '8'){
+                break;
+            case '8':
                 addressBook.userLogOut();
-            }
-             else if (choice == '9')
-            {
+                break;
+            case '9':
                 exit(0);
+                break;
+            default:
+                break;
             }
         }
     }
